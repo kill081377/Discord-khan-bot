@@ -109,9 +109,9 @@ var totalTime = 0;
 var statusNum = 0;
 var mode;
 
-var userApi = "https://www.khanacademy.org/api/internal/user/profile?username=";
-var programApi = 'https://www.khanacademy.org/api/internal/show_scratchpad?scratchpad_id=';
-var labsApi = 'https://www.khanacademy.org/api/labs/scratchpads/';
+var userApi = "https://www.roblox.com/Profile=";
+var programApi = 'https://www.roblox.com/Develope=';
+var labsApi = 'https://www.roblox.com/Home';
 
 var status = [
     'online',
@@ -126,8 +126,8 @@ client.on('ready', () => {
         `${client.channels.size} Channels`
     ];
     client.user.setPresence({ game: { name: `${prefix}help | ${games[Math.floor(Math.random()*games.length)]}`, type: 0 } });
-    client.user.setUsername('KhanBot');
-    console.log('I am ready Jett!');
+    client.user.setUsername('Twobit');
+    console.log('I am ready Adam!');
     console.log(`I have started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
   
     setInterval(function() {
@@ -136,10 +136,10 @@ client.on('ready', () => {
     
     let embed = new Discord.RichEmbed();
     embed.setColor('#0DB221');
-    embed.setThumbnail('https://media.discordapp.net/attachments/372916099114729472/388913604377968662/image.png');
-    embed.addField('Ready', 'I am online and at your service, Jett!');
+    embed.setThumbnail('https://cdn.discordapp.com/avatars/413956374402301952/94559ebbefada2929cb848e4d20b3353.png');
+    embed.addField('Ready', 'I am online and at your service, Adam!');
     embed.setTimestamp();
-    client.users.find('id', '218397146049806337').send({ embed });
+    client.users.find('id', '271656317758734336').send({ embed });
     
     //client.user.setGame({name: prefix + 'help'});
     //client.user.setGame({type: 1, name: prefix + "help", url: ""});
@@ -171,15 +171,15 @@ client.on('message', message => {
         message.channel.sendMessage(responses[Math.round(Math.random(0, 1)*10)]);
     } else
     if (command === 'uptime') {
-        message.channel.sendMessage(':clock2: **KhanBot** has been online for ' + millisToTime(totalTime) + '.');
+        message.channel.sendMessage(':clock2: **Twobit** has been online for ' + millisToTime(totalTime) + '.');
     } else
     if (command === 'info') {
         let embed = new Discord.RichEmbed();
         embed.setThumbnail(client.user.avatarURL);
         embed.addField('Users', client.users.size, true);
         embed.addField('Servers', client.guilds.size, true);
-        embed.addField('Creator', '<@218397146049806337>', true);
-        embed.addField("Invite", 'http://bit.ly/inviteKhanbot', true);
+        embed.addField('Creator', '<@271656317758734336>', true);
+        embed.addField("Invite", 'http://roblox.com', true);
         embed.setColor('#00ffcc');
         message.channel.send({ embed });
     } else
@@ -227,43 +227,43 @@ client.on('message', message => {
         if (args[0] === 'userinfo' || args[0] === 'userInfo') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("Userinfo", 'Use **`k.userInfo <username>`** for user\'s statistics.');
+            embed.addField("Userinfo", 'Use **`t.userInfo <username>`** for user\'s statistics.');
             message.channel.sendEmbed(embed);
         } else
         if (args[0] === 'browse') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("Browse", 'Use **`k.browse hot`** for top hotlist program.\nUse **`k.browse recent`** for most recent program.\nUse **`k.browse votes`** for highest voted program.');
+            embed.addField("Browse", 'Use **`t.browse hot`** for top hotlist program.\nUse **`t.browse recent`** for most recent program.\nUse **`t.browse votes`** for highest voted program.');
             message.channel.sendEmbed(embed);
         } else 
         if (args[0] === 'programdata' || args[0] === 'programData') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("ProgramData", 'Use **`k.programData <program-id>`** for a program\'s data.');
+            embed.addField("ProgramData", 'Use **`t.programData <program-id>`** for a program\'s data.');
             message.channel.sendEmbed(embed);
         } else
         if (args[0] === 'discussion') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("Discussion", 'Use **`k.discussion <username>`** for a user\'s discussion.');
+            embed.addField("Discussion", 'Use **`t.discussion <username>`** for a user\'s discussion.');
             message.channel.sendEmbed(embed);
         } else
         if (args[0] === 'badges') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("Badges", 'Use **`k.badges <username>`** for a user\'s badge counts.');
+            embed.addField("Badges", 'Use **`t.badges <username>`** for a user\'s badge counts.');
             message.channel.sendEmbed(embed);
         } else
         if (args[0] === 'userprograms' || args[0] === 'userPrograms') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("UserPrograms", 'Use **`k.userPrograms <username>`** to get all a user\'s program stats.');
+            embed.addField("UserPrograms", 'Use **`t.userPrograms <username>`** to get all a user\'s program stats.');
             message.channel.sendEmbed(embed);
         } else
         if (args[0] === 'badgeinfo' || args[0] === 'badgeInfo') {
             let embed = new Discord.RichEmbed(); 
             embed.setColor("#ffff00");
-            embed.addField("BadgeInfo", 'Use **`k.badgeInfo <badge-name>`** to returns info about a given badge.');
+            embed.addField("BadgeInfo", 'Use **`t.badgeInfo <badge-name>`** to returns info about a given badge.');
             message.channel.sendEmbed(embed);
         }
         else if (args.length === 0) {
@@ -277,7 +277,7 @@ client.on('message', message => {
         else {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'That command is not defined for `help` to check. Use **`k.help`** to see commands.');
+            embed.addField('Error', 'That command is not defined for `help` to check. Use **`t.help`** to see commands.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -288,7 +288,7 @@ client.on('message', message => {
                 if (!JSON.parse(body)) {
                     let embed = new Discord.RichEmbed();
                     embed.setColor('#ff0000');
-                    embed.addField('Error', 'That username does not exist, use **`k.help userinfo`** for more.');
+                    embed.addField('Error', 'That username does not exist, use **`t.help userinfo`** for more.');
                     message.channel.sendEmbed(embed);
                     return;
                 }
@@ -313,7 +313,7 @@ client.on('message', message => {
                         let embed = new Discord.RichEmbed();
                         embed.setColor('#0DB221');
                         embed.setThumbnail(data.avatar.imagePath.replace(/\/images\/avatars\/(?:svg\/)?(.*?)\.(?:svg|png)/ig, (match, g) => `https://www.kasandbox.org/programming-images/avatars/${g}.png`));
-                        embed.setURL('https://www.khanacademy.org' + data.profileRoot);
+                        embed.setURL('https://www.roblox.com' + data.profileRoot);
                         embed.addField(data.nickname, '@' + args[0], true);
                         embed.addField('Streak:', data.streakLastLength.toLocaleString() + ' days', true);
                         embed.addField('Videos:', (data.dateJoined == null ? 'Not Public' : data.countVideosCompleted.toLocaleString()), true);
@@ -326,7 +326,7 @@ client.on('message', message => {
                 if (kaid.substring(0, 5) !== 'kaid_') {
                     let embed = new Discord.RichEmbed();
                     embed.setColor('#ff0000');
-                    embed.addField('Error', 'That username returned no KAID, use **`k.help userinfo`** for more.');
+                    embed.addField('Error', 'That username returned no KAID, use **`t.help userinfo`** for more.');
                     message.channel.sendEmbed(embed);
                 }
             });
@@ -334,12 +334,12 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'The correct usage is **`k.userInfo <username>`**.');
+            embed.addField('Error', 'The correct usage is **`t.userInfo <username>`**.');
             message.channel.sendEmbed(embed);
         } else {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'That command is not defined for `userInfo`. Use **`k.help userInfo`** for more.');
+            embed.addField('Error', 'That command is not defined for `userInfo`. Use **`t.help userInfo`** for more.');
             message.channel.sendEmbed(embed);
         }
 
@@ -371,12 +371,12 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'The correct usage is **`k.programData <program-id>`**.');
+            embed.addField('Error', 'The correct usage is **`t.programData <program-id>`**.');
             message.channel.sendEmbed(embed);
         } else {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'That program ID does not exist. Use **`k.help programData`** for more.');
+            embed.addField('Error', 'That program ID does not exist. Use **`t.help programData`** for more.');
             message.channel.sendEmbed(embed);
         }
     } else 
@@ -430,13 +430,13 @@ client.on('message', message => {
         if (page === null) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'Incorrect usage, use **`k.help browse`** for more.');
+            embed.addField('Error', 'Incorrect usage, use **`t.help browse`** for more.');
             message.channel.sendEmbed(embed);
         } else
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'Incorrect usage, use **`k.help browse`** for more.');
+            embed.addField('Error', 'Incorrect usage, use **`t.help browse`** for more.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -477,7 +477,7 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'The correct usage is **`k.discussion <username>`**.');
+            embed.addField('Error', 'The correct usage is **`t.discussion <username>`**.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -523,7 +523,7 @@ client.on('message', message => {
                 if (kaid.substring(0, 5) !== 'kaid_') {
                     let embed = new Discord.RichEmbed();
                     embed.setColor('#ff0000');
-                    embed.addField('Error', 'That username returned no KAID, use **`k.help badges`** for more.');
+                    embed.addField('Error', 'That username returned no KAID, use **`t.help badges`** for more.');
                     message.channel.sendEmbed(embed);
                 }
             });
@@ -531,7 +531,7 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', 'The correct usage is **`k.badges <username>`**.');
+            embed.addField('Error', 'The correct usage is **`t.badges <username>`**.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -554,7 +554,7 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', ':x: The correct usage is **`k.badgeInfo <badge name>`**.');
+            embed.addField('Error', ':x: The correct usage is **`t.badgeInfo <badge name>`**.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -578,7 +578,7 @@ client.on('message', message => {
                     let embed = new Discord.RichEmbed();
                     
                     embed.setColor("#1b964a");
-                    embed.setThumbnail('https://www.khanacademy.org' + sbody[0].thumb);
+                    embed.setThumbnail('https://www.roblox.com/profile' + sbody[0].thumb);
                     embed.setURL(sbody[0].url);
                     embed.addField(nick, `@${args[0]}`, true);
                     embed.addField('Programs:', numPrograms.toLocaleString() , true);
@@ -592,7 +592,7 @@ client.on('message', message => {
                 } else {
                     let embed = new Discord.RichEmbed();
                     embed.setColor('#ff0000');
-                    embed.addField('Error', ':x: That user has no programs, use **`k.help userPrograms`** for more.');
+                    embed.addField('Error', ':x: That user has no programs, use **`t.help userPrograms`** for more.');
                     message.channel.sendEmbed(embed);
                 }
             });
@@ -600,7 +600,7 @@ client.on('message', message => {
         if (args.length !== 1) {
             let embed = new Discord.RichEmbed();
             embed.setColor('#ff0000');
-            embed.addField('Error', ':x: The correct usage is **`k.userPrograms <username>`**.');
+            embed.addField('Error', ':x: The correct usage is **`t.userPrograms <username>`**.');
             message.channel.sendEmbed(embed);
         }
     } else
@@ -637,7 +637,7 @@ client.on('message', message => {
 
                 getKAData(message, labsApi, data.url.split('/')[5], function(body2) {
                     embed.setColor("#1b964a");
-                    embed.setImage('https://www.khanacademy.org' + data.thumb);
+                    embed.setImage('https://www.roblox.com/Profile' + data.thumb);
                     embed.setURL(data.url);
                     embed.setTitle(data.title);
                     embed.addField('Author', data.authorNickname, true);
@@ -665,7 +665,7 @@ client.on('message', message => {
     else {
         let embed = new Discord.RichEmbed();
         embed.setColor('#ff0000');
-        embed.addField('Error', 'That command is not defined. Use **`k.help`** for more.');
+        embed.addField('Error', 'That command is not defined. Use **`t.help`** for more.');
         message.channel.sendEmbed(embed);
     }*/
 });
