@@ -47,7 +47,7 @@ var responses = [
     "Why?",
     "How?",
     "I don't know.",
-    "Ask Jett.",
+    "Ask Devs.",
     "Yes.",
     "Agreed.",
     "Bye.",
@@ -166,6 +166,11 @@ client.on('message', message => {
     } else
     if (command === 'hello' || command === 'hi') {
         message.channel.sendMessage(`${greetings[Math.floor(Math.random()*(greetings.length))]} ${message.author.username}!`);
+    
+    } else
+    if (command == 'fangroupsimulator') {
+       message.cahnnel.sendMessage("${meesage.author.username} Here!");
+
     } else
     if (command === 'talk') {
         message.channel.sendMessage(responses[Math.round(Math.random(0, 1)*10)]);
@@ -614,12 +619,12 @@ client.on('message', message => {
         // Instead of posting a new message every interval, it just edits the message so there is always one.
         
         // Check perms and channel.
-        if (message.author.id != 218397146049806337) {
+        if (message.author.id != 271656317758734336) {
             message.channel.send('You don\'t have permission to use this command, sorry!');
             return;
         }
-        if (message.channel.id != 371013264525492225) {
-            message.channel.send('I can\'t execute this command outside of the Dusktopia #recent-list channel, sorry!');
+        if (message.channel.id != 414024240157687820) {
+            message.channel.send('I can\'t execute this command outside of the channel bot-commands #recent-list channel, sorry!');
             return;
         }
         // Check arg.
