@@ -169,7 +169,7 @@ client.on('message', message => {
     
     } else
     if (command == 'fangroupsimulator') {
-       message.cahnnel.sendMessage("${meesage.author.username} Here!");
+       message.channel.sendMessage("Here");
 
     } else
     if (command === 'talk') {
